@@ -1,0 +1,24 @@
+ALGORITHM read_sentence
+VAR
+    nb_c: INTEGER:=0;
+    nb_w: INTEGER:=0;
+    nb_v: INTEGER:=0;
+    ch: STRING;
+BEGIN
+    read(ch);
+    FOR i FROM 0 TO ch.size() STEP step  DO
+        IF (ch[i]<>".") THEN
+            nb_c:=nb_c+1;
+        END_IF
+        IF (ch[i]=" ") THEN
+            nb_w:=nb_w+1;
+        END_IF
+        IF (ch[i]="e" or ch[i]="a" or ch[i]="i" or ch[i]="u" or ch[i]="o") THEN
+            nb_v:=nb_v+1;
+        END_IF
+        
+    END_FOR
+    write(nb_c);
+    write(nb_w);
+    write(nb_v);
+END
